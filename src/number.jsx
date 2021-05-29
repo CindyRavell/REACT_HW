@@ -7,8 +7,6 @@ const array = Array.from({length: 100}, (_, i) => i + 1)
 class Number extends React.Component {
   constructor(props){
     super(props)
-    this.background = this.props.background
-    this.word = this.props.word
     this.changeWord = this.changeWord.bind(this.props)
   }
  
