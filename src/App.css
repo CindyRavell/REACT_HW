@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://www.metro951.com/wp-content/uploads/2020/04/ghibli-e1586980584554.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,3 +36,4 @@
     transform: rotate(360deg);
   }
 }
+
