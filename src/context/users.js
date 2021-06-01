@@ -25,8 +25,6 @@ export const USERS = [
     name: "Mary Doe",
     avatar: avatar2,
     biography: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
-    user: "test2",
-    password: 12345,
     car:{
       id:4,
       model:"tesla",
@@ -41,8 +39,7 @@ export const USERS = [
     name: "Jamie Doe",
     avatar: avatar3,
     biography: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
-    user: "test3",
-    password: 12345,
+    
     car:{
       id:3,
       model:"tesla",
@@ -57,8 +54,6 @@ export const USERS = [
     name: "Ana Doe",
     avatar: avatar4,
     biography: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
-    user: "test4",
-    password: 12345,
     car:{
       id:1,
       model:"tesla",
@@ -73,8 +68,7 @@ export const USERS = [
     name: "Erick Doe",
     avatar: avatar5,
     biography: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
-    user: "test5",
-    password: 12345,
+    
     car:{
       id:2,
       model:"tesla",

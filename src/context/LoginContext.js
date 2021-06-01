@@ -5,23 +5,36 @@ const {Provider, Consumer} = LoginContext;
 
 
 class LoginContextProvider extends Component {
+    constructor(props){
+        super(props)
+        this.loginHandler = this.loginHandler.bind(this)
+        this.logOut = this.logOut.bind(this)
+    }
     state = {
         isLoggedIn:true,
-        user:"",
-        password:"",
+        user:"test",
+        password:12345,
     };
+    logOut (){
 
-    loginHandler =()=>{
+        this.setState({isLoggedIn:false})
+    
+    }
+
+    loginHandler ({user,password}){
+    
+        if(this.state.user=== user&&this.state.password===password){
         this.setState(({isLoggedIn})=>({
             isLoggedIn: isLoggedIn === true? false :true,
             
         }));
     }
+    }
 
     render(){
         const {isLoggedIn, user, password} = this.state;
         return(
-            <Provider value ={{isLoggedIn, loginHandler: this.loginHandler,user, password}}>
+            <Provider value ={{isLoggedIn, loginHandler: this.loginHandler,logOut: this.logOut,user, password}}>
                 {this.props.children}
             </Provider>
         )

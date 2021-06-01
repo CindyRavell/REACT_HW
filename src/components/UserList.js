@@ -8,13 +8,13 @@ import {LoginContext,LoginContextConsumer} from '../context/LoginContext.js';
 class UserList extends React.Component{
     render(){
         const{isLoggedIn,loginHandler}=this.context;
+        const valuesToSend = {user:"test",password:12345}
         console.log("se supone",this.context)
         if(isLoggedIn){
         return(
             <ThemeContextConsumer>
                 {({theme})=>(
                     <>
-                    <button  className={`${theme}-button button`}onClick={loginHandler}>Log Out</button>
                     <UserContextConsumer>
                         {({ users, deleteUser })=>(
                             <div className ={`${theme}-theme`}>
@@ -32,11 +32,11 @@ class UserList extends React.Component{
     }
     return(
         <ThemeContextConsumer>
-                        {({theme})=>(
-                            <>
-                            <button onClick={loginHandler} className={`${theme}-button button`}>Log In</button>
-                            </>
-                            )}
+            {({theme})=>(
+                <>
+                <button onClick={()=>loginHandler(valuesToSend)} className={`${theme}-button button`}>Log In</button>
+                </>
+            )}
         </ThemeContextConsumer>
         
         )

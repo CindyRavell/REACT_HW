@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { UsersContext,UserContextConsumer} from '../context/UserContext.js';
-import {ThemeContext,ThemeContextConsumer} from '../context/ThemeContext';
+import {ThemeContextConsumer} from '../context/ThemeContext';
+import {LoginContext} from '../context/LoginContext.js';
 
 class UserCard extends React.Component{
     _handleOnDelete=()=>{
@@ -11,8 +11,9 @@ class UserCard extends React.Component{
     
     render(){
         const{name, biography, avatar} = this.props.user;
-        
-
+        const{isLoggedIn,loginHandler,logOut}=this.context;
+        const e = {user:"test",password:12345}
+        if(isLoggedIn){
         return(
             <div className = 'container'>
                 <img src={avatar} alt={avatar} className="avatar"/>
@@ -24,6 +25,7 @@ class UserCard extends React.Component{
                         {({theme})=>(
                             <>
                             <button onClick={this._handleOnDelete} className={`${theme}-button button`}>Delete User</button>
+                            <button  className={`${theme}-button button`}onClick={()=>logOut()}>Log Out</button>
                             </>
                             )}
                         </ThemeContextConsumer>
@@ -31,11 +33,12 @@ class UserCard extends React.Component{
                 </div>
             </div>
         )
-        
     }
+}
 }
             
 
 
 export default UserCard;
 
+UserCard.contextType = LoginContext;
