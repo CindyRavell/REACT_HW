@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,16 +12,61 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Day-theme{
+  background-color: antiquewhite;
+  color: #282c34;
+}
+.Night.theme{
+  background-color: #1a1a1a;
+  color: beige;
+}
+
+.button{
+  margin: 10px;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 15px;
+}
+.Day-button{
+  background-color: #282c34;
+  color: rgb(62, 146, 146);
+}
+.Night-button{
+  background-color: #99bdff;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+}
+
+.User-info{
+  margin:0 10px;
+}
+
+.avatar{
+  width: 200px;
+}
+
+.car{
+  width: 100%;
+  padding-left: 20px;
+}
+
+.Night-car{
+  background-color: #99bdff;
+}
+
+.Day-car{
+  background-color: #1a1a1a;
+  color: antiquewhite;
 }

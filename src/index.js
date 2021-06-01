@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ThemeContextProvider} from '../src/context/ThemeContext';
+import {UsersContextProvider} from '../src/context/UserContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeContextProvider>
+      <UsersContextProvider>
+        <App />
+      </UsersContextProvider>
+    </ThemeContextProvider>
+    ,
   </React.StrictMode>,
   document.getElementById('root')
 );
