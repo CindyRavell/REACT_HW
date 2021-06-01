@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeContextProvider} from '../src/context/ThemeContext';
 import {UsersContextProvider} from '../src/context/UserContext';
+import {LoginContextProvider} from '../src/context/LoginContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeContextProvider>
+      <LoginContextProvider>
       <UsersContextProvider>
         <App />
       </UsersContextProvider>
+      </LoginContextProvider>
     </ThemeContextProvider>
     ,
   </React.StrictMode>,

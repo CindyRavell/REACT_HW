@@ -8,7 +8,8 @@ class Header extends React.Component{
             <ThemeContextConsumer>
                 {({theme, isDay})=>(
                     <div className={`${theme}-theme header`}>
-                        <Button text='Toggle Theme'/>
+                        <Button text='Toggle Theme'
+                                function='toggleTheme'/>
                     </div>
                     
                 )}

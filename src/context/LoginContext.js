@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
-import {USERS} from './users.js';
 
-const UsersContext = React.createContext();
-const {Provider, Consumer} = UsersContext;
+const LoginContext = React.createContext();
+const {Provider, Consumer} = LoginContext;
 
-class UsersContextProvider extends Component{
-    state={
-        users: USERS
-    }
 
-    deleteUser = (userId)=>{
-        this.setState ((prevState)=>({
-            users: prevState.users.filter((user)=>user.id!==userId),
-        }));
+class LoginContextProvider extends Component {
+    state = {
+        isLoggedIn:true,
+        user:"",
+        password:"",
     };
-    render(){
-        const {users} = this.state;
-        const {children} = this.props;
-        return(
-            <Provider
-            value={{
-                users,
-                deleteUser:this.deleteUser,
-                cars: users.map((user)=> user.car),
-            }}
-            >
-                {children}
-            </Provider>
-        );
+
+    loginHandler =()=>{
+        this.setState(({isLoggedIn})=>({
+            isLoggedIn: isLoggedIn === true? false :true,
+            
+        }));
     }
+
+    render(){
+        const {isLoggedIn, user, password} = this.state;
+        return(
+            <Provider value ={{isLoggedIn, loginHandler: this.loginHandler,user, password}}>
+                {this.props.children}
+            </Provider>
+        )
+    }
+
 }
-export {UsersContext,UsersContextProvider,Consumer as UserContextConsumer}
+export{LoginContext,LoginContextProvider, Consumer as LoginContextConsumer};
